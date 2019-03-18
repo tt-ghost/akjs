@@ -1,15 +1,21 @@
 {
-  "name": "koa-my",
+  "name": "koa-startkit",
   "version": "0.1.0",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon ./src/app.js",
+    "server": "pm2 start ./src/app.js"
   },
+  "license": "MIT",
   "dependencies": {
-    "koa": "^2.6.2",
+    "koa": "^2.7.0",
     "koa-router": "^7.4.0",
     "mysql": "^2.16.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.6"
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "nodemon": "^1.18.10"
   }
 }
