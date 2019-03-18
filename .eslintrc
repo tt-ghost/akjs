@@ -12,6 +12,6 @@
       "imports": "never",
       "exports": "never",
       "functions": "ignore"
-  }]
+    }]
   }
 }
