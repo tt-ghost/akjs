@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "scripts": {
     "start": "cross-env NODE_ENV=dev nodemon ./src/app.js",
-    "server": "cross-env NODE_ENV=test pm2 start ./src/app.js",
     "server-test": "cross-env NODE_ENV=test pm2 start ./dist/app.js",
     "server-stage": "cross-env NODE_ENV=stage pm2 start ./dist/app.js",
     "server-prod": "cross-env NODE_ENV=prod pm2 start ./dist/app.js"
