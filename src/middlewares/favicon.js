@@ -1,6 +1,6 @@
-module.exports = () => async (ctx, next) => {
+module.exports = () => (ctx) => {
   console.log(888, ctx.path)
   if (ctx.path !== '/favicon.ico') {
-    await next()
+    // next()
   }
 }
