@@ -3,12 +3,20 @@
   "version": "0.1.0",
   "scripts": {
     "start": "nodemon ./src/app.js",
-    "server": "pm2 start ./src/app.js"
+    "server": "cross-env NODE_ENV=test pm2 start ./src/app.js",
+    "server-test": "cross-env NODE_ENV=test pm2 start ./dist/app.js",
+    "server-stage": "cross-env NODE_ENV=stage pm2 start ./dist/app.js",
+    "server-prod": "cross-env NODE_ENV=prod pm2 start ./dist/app.js"
   },
   "license": "MIT",
   "dependencies": {
     "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-convert": "^1.2.0",
+    "koa-mysql-session": "0.0.2",
+    "koa-proxy": "^0.9.0",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.10.1",
     "mysql": "^2.16.0"
   },
   "devDependencies": {

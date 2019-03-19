@@ -1,13 +1,13 @@
 
 const DB_CONFIG = {
-  development: {
+  dev: {
     database: 'koa_startkit',
     user: 'root',
     password: '123456',
     port: '3306',
     host: 'localhost'
   },
-  production: {
+  prod: {
     database: 'koa_startkit',
     user: 'root',
     password: '123456',
