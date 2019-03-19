@@ -2,13 +2,17 @@
   "name": "koa-startkit",
   "version": "0.1.0",
   "scripts": {
-    "start": "nodemon ./src/app.js",
+    "start": "cross-env NODE_ENV=dev nodemon ./src/app.js",
     "server": "cross-env NODE_ENV=test pm2 start ./src/app.js",
     "server-test": "cross-env NODE_ENV=test pm2 start ./dist/app.js",
     "server-stage": "cross-env NODE_ENV=stage pm2 start ./dist/app.js",
     "server-prod": "cross-env NODE_ENV=prod pm2 start ./dist/app.js"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tt-ghost/koa-startkit.git"
+  },
   "dependencies": {
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
@@ -21,6 +25,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",

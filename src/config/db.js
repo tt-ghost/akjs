@@ -1,4 +1,4 @@
-
+// alter user 'root'@'localhost' identified with mysql_native_password by '123456';
 const DB_CONFIG = {
   dev: {
     database: 'koa_startkit',

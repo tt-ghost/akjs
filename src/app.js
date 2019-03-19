@@ -1,20 +1,20 @@
 const Koa = require('koa')
-const ENV = require('./config/env')
-const routers = require('./routers')
+const env = require('./config/env')()
+const router = require('./controller')
 const middlewares = require('./middlewares')
 const dbUtil = require('./util/db')
 
 // init database
-const sqlFiles = []
+const sqlFiles = ['user']
 dbUtil.initDB(sqlFiles)
 
-const env = ENV()
 const app = new Koa()
 
 // 加载中间件
-middlewares(app)
+app.use(middlewares(app))
+
 // router
-app.use(routers.routes())
+app.use(router.routes())
 
 app.listen(env.PORT)
 

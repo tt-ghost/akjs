@@ -5,4 +5,6 @@ const router = new Router({
   prefix: '/api'
 })
 
-router.use('/user', User.routes)
+router.use('/user', User.routes())
+
+module.exports = router

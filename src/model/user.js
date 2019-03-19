@@ -1,12 +1,17 @@
-const mysqlUtil = require('../util/mysql')
+const dbUtil = require('../util/db')
 
-exports.getUserByName = function () {
-  const sql = 'SELECT * FROM users;'
-  return mysqlUtil.query(sql, [])
+function getUserByName() {
+  const sql = 'SELECT * FROM user;'
+  return dbUtil.query(sql, [])
 }
 
-exports.insertUser = function (user) {
-  const sql = 'INSERT INTO users SET ?'
-  console.log('insert')
-  return mysqlUtil.query(sql, user)
+function insertUser(user) {
+  const sql = 'INSERT INTO user SET ?'
+  console.log('insert: ', user)
+  return dbUtil.query(sql, user)
+}
+
+module.exports = {
+  getUserByName,
+  insertUser
 }

@@ -1,7 +1,5 @@
 const bodyParser = require('koa-bodyparser')
 
-module.exports = function (app) {
-  app.use(bodyParser({
-    formLimit: '1mb'
-  }))
-}
+module.exports = () => (ctx, next) => bodyParser({
+  formLimit: '1mb'
+})(ctx, next)
