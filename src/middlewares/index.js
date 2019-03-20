@@ -8,9 +8,4 @@ module.exports = (app) => async (ctx, next) => {
   session(app)(ctx, next)
   proxyCDN()(ctx, next)
   favicon()(ctx, next)
-  // app.use(bodyParser())
-  // app.use(session(app))
-  // app.use(proxyCDN())
-  // app.use(favicon())
-  // await next()
 }
