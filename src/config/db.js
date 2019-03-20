@@ -5,14 +5,16 @@ const DB_CONFIG = {
     user: 'root',
     password: '123456',
     port: '3306',
-    host: 'localhost'
+    host: 'localhost',
+    connectTimeout: 30 * 1000
   },
   prod: {
     database: 'koa_startkit',
     user: 'root',
     password: '123456',
     port: '3306',
-    host: 'localhost'
+    host: 'localhost',
+    connectTimeout: 30 * 1000
   }
 }
 
