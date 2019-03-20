@@ -11,7 +11,7 @@ dbUtil.initDB(sqlFiles)
 const app = new Koa()
 
 // 加载中间件
-app.use(middlewares(app))
+middlewares(app)
 
 // router
 app.use(router.routes())

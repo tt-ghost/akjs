@@ -3,9 +3,9 @@ const bodyParser = require('./body-parser')
 const proxyCDN = require('./proxy-cdn')
 const favicon = require('./favicon')
 
-module.exports = (app) => async (ctx, next) => {
-  bodyParser()(ctx, next)
-  session(app)(ctx, next)
-  proxyCDN()(ctx, next)
-  favicon()(ctx, next)
+module.exports = (app) => {
+  bodyParser(app)
+  session(app)
+  proxyCDN(app)
+  favicon(app)
 }
