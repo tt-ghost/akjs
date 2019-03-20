@@ -10,11 +10,12 @@ dbUtil.initDB(sqlFiles)
 
 const app = new Koa()
 
-// 加载中间件
-middlewares(app)
-
 // router
 app.use(router.routes())
+app.use(router.allowedMethods())
+
+// 加载中间件
+middlewares(app)
 
 app.listen(env.PORT)
 

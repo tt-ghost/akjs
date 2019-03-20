@@ -15,7 +15,7 @@ function query(sql, values) {
           if (err2) {
             reject(err2)
           } else {
-            resolve(rows)
+            resolve(JSON.parse(JSON.stringify(rows)))
           }
           connection.release()
         })
