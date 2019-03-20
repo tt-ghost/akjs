@@ -6,12 +6,11 @@ class UserService {
   }
 
   static getUserById(userId) {
-    // return UserModel.getUserById(userId)
     return UserModel.getUserById(userId)
   }
 
   static addUser(_user) {
-    const user = Object.assign({ status: 'pending' }, _user)
+    const user = Object.assign(UserModel.default, _user)
     return UserModel.addUser(user)
   }
 }
