@@ -38,7 +38,6 @@ router.get('/:userId', async ctx => {
 router.post('/', async ctx => {
   // ctx.request
   const user = ctx.request.body
-  console.log(111, user)
   const current = await UserService.addUser(user)
   ctx.body = { current }
 })
