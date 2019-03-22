@@ -1,11 +1,11 @@
 function favicon() {
-  return (ctx, next) => {
+  return async (ctx, next) => {
     if (ctx.path !== '/favicon.ico') {
-      next()
+      await next()
     }
   }
 }
 
-module.exports = (app) => {
+module.exports = app => {
   app.use(favicon())
 }

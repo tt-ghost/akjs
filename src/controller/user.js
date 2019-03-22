@@ -24,11 +24,12 @@ router.get('/', async ctx => {
 router.get('/:userId', async ctx => {
   const { userId } = ctx.params
   const result = await UserService.getUserById(userId)
-  const current = result[0]
+  console.log(result, 99)
+  const current = result
   if (current) {
     ctx.body = current
   } else {
-    ctx.status = 404
+    ctx.body = {}
   }
 })
 
