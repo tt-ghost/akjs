@@ -1,3 +1,6 @@
+/**
+ * DBUtil 数据库操作类
+ */
 const mysql = require('mysql')
 const fs = require('fs')
 const path = require('path')
