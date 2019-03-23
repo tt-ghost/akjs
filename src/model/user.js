@@ -18,7 +18,6 @@ class UserModel extends BaseModel {
    * 获取当前用户信息
    */
   getCurrentUser() {
-    console.log('model: 获取当前用户')
     const sql = 'SELECT * FROM user'
     return this.query(sql, [])
   }
@@ -27,7 +26,6 @@ class UserModel extends BaseModel {
    * 通过用户名获取用户
    */
   getUserById(userId) {
-    console.log('model: 通过用户名获取用户信息')
     const sql = 'SELECT * FROM user WHERE user_id = ?'
     return this.query(sql, [userId])
   }
@@ -38,7 +36,6 @@ class UserModel extends BaseModel {
    */
   addUser(user) {
     const sql = 'INSERT INTO user SET ?'
-    console.log('model: 添加用户。', user)
     return this.query(sql, user)
   }
 }

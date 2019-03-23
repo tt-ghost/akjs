@@ -1,14 +1,13 @@
 const Router = require('koa-router')
 const UserService = require('../service/user')
 
-// const userService = new UserService()
 const router = new Router()
 
 /**
  * get current user
- * TODO: query sql
  */
 router.get('/', async ctx => {
+  // const token = ctx.cookies.get('token')
   const result = await UserService.getCurrentUser()
   const current = result[0]
   if (current) {
@@ -29,7 +28,7 @@ router.get('/:userId', async ctx => {
   if (current) {
     ctx.body = current
   } else {
-    ctx.body = {}
+    ctx.status = 404
   }
 })
 

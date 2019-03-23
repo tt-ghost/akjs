@@ -6,11 +6,10 @@ const DBUtil = require('./util/db')
 
 // init database
 const sqlFiles = ['user']
-new DBUtil().initDB(sqlFiles)
+new DBUtil().$initDB(sqlFiles)
 
 const app = new Koa()
 
-// TODO: 请求返回时返回not found，但是可以post插入数据
 // 加载中间件
 middlewares(app)
 

@@ -51,7 +51,7 @@ class DBUtil {
    * 初始化数据库
    * @param {array} files 待执行的sql文件名列表，不含 .sql 扩展
    */
-  initDB(files) {
+  $initDB(files) {
     if (Array.isArray(files)) {
       files.forEach(file => {
         const sql = path.resolve(__dirname, '../sql', `${file}.sql`)
@@ -62,8 +62,3 @@ class DBUtil {
 }
 
 module.exports = DBUtil
-// module.exports = {
-//   query,
-//   execSQLFile,
-//   initDB
-// }
