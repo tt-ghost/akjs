@@ -1,6 +1,6 @@
 const Koa = require('koa')
 const env = require('./config/env')()
-const router = require('./controller')
+const router = require('./modules')
 const middlewares = require('./middlewares')
 const DBUtil = require('./util/db')
 

@@ -1,4 +1,4 @@
-const UserModel = require('../model/user')
+const UserModel = require('./model')
 
 const userModel = new UserModel()
 
