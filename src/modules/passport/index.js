@@ -2,7 +2,7 @@
  * passport router
  */
 const Router = require('koa-router')
-// const Service = require('./service')
+const Service = require('./service')
 
 const router = new Router()
 
@@ -10,8 +10,10 @@ const router = new Router()
  * login
  */
 router.post('/login', async ctx => {
+  const { username, pwd } = ctx.request
+  await Service.login({ username, pwd })
   ctx.body = {
-    username: 'orange'
+    msg: '登录成功！'
   }
 })
 

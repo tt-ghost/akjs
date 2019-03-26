@@ -1,20 +1,20 @@
-const UserModel = require('./model')
+const Model = require('./model')
 
-const userModel = new UserModel()
+const model = new Model()
 
 class UserService {
   static getCurrentUser(ticket) {
-    return userModel.getCurrentUser(ticket)
+    return model.getCurrentUser(ticket)
   }
 
   static getUserById(userId) {
-    return userModel.getUserById(userId)
+    return model.getUserById(userId)
   }
 
   static addUser(_user) {
-    console.log(888, userModel.default, _user)
-    const user = Object.assign(userModel.default, _user)
-    return userModel.addUser(user)
+    console.log(888, model.default, _user)
+    const user = Object.assign(model.default, _user)
+    return model.addUser(user)
   }
 }
 
