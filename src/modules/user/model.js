@@ -1,4 +1,5 @@
 const BaseModel = require('../../base/model')
+const SQL = require('./sql')
 
 class UserModel extends BaseModel {
   constructor() {
@@ -18,16 +19,14 @@ class UserModel extends BaseModel {
    * 获取当前用户信息
    */
   getCurrentUser() {
-    const sql = 'SELECT * FROM user'
-    return this.query(sql, [])
+    return this.query(SQL.USER_GET_CURRENT_USER, [])
   }
 
   /**
    * 通过用户名获取用户
    */
   getUserById(userId) {
-    const sql = 'SELECT * FROM user WHERE user_id = ?'
-    return this.query(sql, [userId])
+    return this.query(SQL.USER_GET_USER_BY_ID, [userId])
   }
 
   /**
@@ -35,8 +34,7 @@ class UserModel extends BaseModel {
    * @param {Object} user 用户信息
    */
   addUser(user) {
-    const sql = 'INSERT INTO user SET ?'
-    return this.query(sql, user)
+    return this.query(SQL.USER_ADD_USER, user)
   }
 }
 
