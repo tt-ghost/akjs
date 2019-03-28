@@ -10,7 +10,7 @@ class PassportService {
     if (username && pwd) {
       return model.login({ username, pwd })
     }
-    return Promise.reject(new Error('用户名或密码错误'))
+    return new PromiseError('用户名或密码错误')
   }
 }
 

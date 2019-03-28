@@ -11,9 +11,12 @@ const router = new Router()
  */
 router.post('/login', async ctx => {
   const { username, pwd } = ctx.request
-  await Service.login({ username, pwd })
-  ctx.body = {
-    msg: '登录成功！'
+  const [err] = await ato(Service.login({ username, pwd }))
+  if (err) {
+    ctx.status = 500
+    ctx.body = { message: err.message }
+  } else {
+    ctx.status = 200
   }
 })
 
