@@ -3,6 +3,9 @@ const env = require('./config/env')()
 const router = require('./modules')
 const middlewares = require('./middlewares')
 const DBUtil = require('./util/db')
+const globalUtil = require('./util/global')
+
+globalUtil(global)
 
 // init database
 const sqlFiles = ['user']
