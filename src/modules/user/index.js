@@ -8,13 +8,12 @@ const router = new Router()
  */
 router.get('/', async ctx => {
   // const token = ctx.cookies.get('token')
-  const result = await UserService.getCurrentUser()
-  const current = result[0]
-  if (current) {
-    ctx.body = current
-  } else {
-    ctx.status = 404
-  }
+  const [err, result] = await ato(UserService.getCurrentUser())
+  Res(err, ctx, () => {
+    ctx.body = {
+      data: result
+    }
+  })
 })
 
 /**
