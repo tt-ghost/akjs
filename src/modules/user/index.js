@@ -21,14 +21,12 @@ router.get('/', async ctx => {
  */
 router.get('/:userId', async ctx => {
   const { userId } = ctx.params
-  const result = await UserService.getUserById(userId)
-  console.log(result, 99)
-  const current = result
-  if (current) {
-    ctx.body = current
-  } else {
-    ctx.status = 404
-  }
+  const [err, result] = await ato(UserService.getUserById(userId))
+  Res(err, ctx, () => {
+    ctx.body = {
+      data: result
+    }
+  })
 })
 
 /**
@@ -37,8 +35,12 @@ router.get('/:userId', async ctx => {
 router.post('/', async ctx => {
   // ctx.request
   const user = ctx.request.body
-  const current = await UserService.addUser(user)
-  ctx.body = { current }
+  const [err, result] = await ato(UserService.addUser(user))
+  Res(err, ctx, () => {
+    ctx.body = {
+      data: result
+    }
+  })
 })
 
 /**
