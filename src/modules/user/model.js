@@ -38,14 +38,4 @@ class UserModel extends BaseModel {
   }
 }
 
-// UserModel.default = {
-//   status: 'pending',
-//   name: '',
-//   nickname: '',
-//   email: '',
-//   password: '',
-//   avator: '',
-//   sex: ''
-// }
-
 module.exports = UserModel
