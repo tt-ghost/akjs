@@ -8,8 +8,8 @@ const router = new Router()
  */
 router.get('/', async ctx => {
   // const token = ctx.cookies.get('token')
-  const [err, result] = await ato(UserService.getCurrentUser())
-  Res(err, ctx, () => {
+  const [err, result] = await G.ato(UserService.getCurrentUser())
+  G.res(err, ctx, () => {
     ctx.body = {
       data: result
     }
@@ -21,8 +21,8 @@ router.get('/', async ctx => {
  */
 router.get('/:userId', async ctx => {
   const { userId } = ctx.params
-  const [err, result] = await ato(UserService.getUserById(userId))
-  Res(err, ctx, () => {
+  const [err, result] = await G.ato(UserService.getUserById(userId))
+  G.res(err, ctx, () => {
     ctx.body = {
       data: result
     }
@@ -35,8 +35,8 @@ router.get('/:userId', async ctx => {
 router.post('/', async ctx => {
   // ctx.request
   const user = ctx.request.body
-  const [err, result] = await ato(UserService.addUser(user))
-  Res(err, ctx, () => {
+  const [err, result] = await G.ato(UserService.addUser(user))
+  G.res(err, ctx, () => {
     ctx.body = {
       data: result
     }

@@ -11,8 +11,4 @@ function res(err, ctx, success) {
   }
 }
 
-function Res(err, ctx, success) {
-  res(err, ctx, success)
-}
-
-module.exports = Res
+module.exports = res

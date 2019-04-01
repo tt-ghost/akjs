@@ -1,10 +1,14 @@
 const ato = require('await-to-js').default
+const res = require('./res')
 const ErrorUtil = require('./error')
-const Res = require('./res')
+
+const { PromiseError } = ErrorUtil
 
 /* eslint no-param-reassign: ["error", { "props": false }] */
 module.exports = g => {
-  g.ato = ato
-  g.PromiseError = ErrorUtil.PromiseError
-  g.Res = Res
+  g.G = {
+    ato,
+    res,
+    PromiseError
+  }
 }

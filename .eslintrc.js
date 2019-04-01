@@ -16,8 +16,6 @@ module.exports = {
   },
   "globals": {
     // 设置全局变量，false为不可重新赋值
-    "ato": false,
-    "PromiseError": false,
-    "Res": false
+    "G": false
   }
 }

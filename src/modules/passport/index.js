@@ -11,7 +11,7 @@ const router = new Router()
  */
 router.post('/login', async ctx => {
   const { username, pwd } = ctx.request
-  const [err] = await ato(Service.login({ username, pwd }))
+  const [err] = await G.ato(Service.login({ username, pwd }))
   if (err) {
     ctx.status = 500
     ctx.body = { message: err.message }
