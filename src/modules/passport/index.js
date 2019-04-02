@@ -25,7 +25,7 @@ router.post('/login', async ctx => {
  */
 router.get('/logout', async ctx => {
   ctx.body = {
-    msg: '退出成功'
+    message: '退出成功'
   }
 })
 
@@ -34,7 +34,7 @@ router.get('/logout', async ctx => {
  */
 router.post('/reg', async ctx => {
   ctx.body = {
-    msg: '注册成功'
+    message: '注册成功'
   }
 })
 
@@ -42,14 +42,14 @@ router.post('/reg', async ctx => {
  * forget pwd
  */
 router.post('/forget', ctx => {
-  ctx.body = { msg: '忘记密码' }
+  ctx.body = { message: '忘记密码' }
 })
 
 /**
  * forget pwd
  */
 router.post('/forget', ctx => {
-  ctx.body = { msg: '忘记密码' }
+  ctx.body = { message: '忘记密码' }
 })
 
 module.exports = router
