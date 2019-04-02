@@ -18,7 +18,7 @@ class DBUtil {
    * @param {string} sql 待执行的sql字符串
    * @param {object||array||null} values 查询参数
    */
-  query(sql, values) {
+  query(sql, values = []) {
     return new Promise((resolve, reject) => {
       this.pool.getConnection((err, connection) => {
         if (err) {

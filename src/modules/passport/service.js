@@ -1,16 +1,18 @@
+const BaseService = require('../../base/service')
 /**
  * passport service
  */
-const Model = require('./model')
+class PassportService extends BaseService {
+  constructor() {
+    super('modules/passport/model')
+  }
 
-const model = new Model()
-class PassportService {
-  static login({ username, pwd }) {
+  login({ username, pwd }) {
     // check username and pwd
     if (username && pwd) {
-      return model.login({ username, pwd })
+      return this.model.login({ username, pwd })
     }
-    return new G.PromiseError('用户名或密码错误')
+    return new G.PromiseError('用户名或密码错误', 400)
   }
 }
 

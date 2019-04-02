@@ -4,6 +4,7 @@
 const Router = require('koa-router')
 const Service = require('./service')
 
+const service = new Service()
 const router = new Router()
 
 /**
@@ -11,13 +12,12 @@ const router = new Router()
  */
 router.post('/login', async ctx => {
   const { username, pwd } = ctx.request
-  const [err] = await G.ato(Service.login({ username, pwd }))
-  if (err) {
-    ctx.status = 500
-    ctx.body = { message: err.message }
-  } else {
-    ctx.status = 200
-  }
+  const [err] = await G.ato(service.login({ username, pwd }))
+  G.res(err, ctx, () => {
+    ctx.body = {
+      message: '登录成功'
+    }
+  })
 })
 
 /**

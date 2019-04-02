@@ -1,6 +1,7 @@
 const Router = require('koa-router')
-const UserService = require('./service')
+const Service = require('./service')
 
+const service = new Service()
 const router = new Router()
 
 /**
@@ -8,7 +9,7 @@ const router = new Router()
  */
 router.get('/', async ctx => {
   // const token = ctx.cookies.get('token')
-  const [err, result] = await G.ato(UserService.getCurrentUser())
+  const [err, result] = await G.ato(service.getCurrentUser())
   G.res(err, ctx, () => {
     ctx.body = {
       data: result
@@ -21,7 +22,7 @@ router.get('/', async ctx => {
  */
 router.get('/:userId', async ctx => {
   const { userId } = ctx.params
-  const [err, result] = await G.ato(UserService.getUserById(userId))
+  const [err, result] = await G.ato(service.getUserById(userId))
   G.res(err, ctx, () => {
     ctx.body = {
       data: result
@@ -35,7 +36,7 @@ router.get('/:userId', async ctx => {
 router.post('/', async ctx => {
   // ctx.request
   const user = ctx.request.body
-  const [err, result] = await G.ato(UserService.addUser(user))
+  const [err, result] = await G.ato(service.addUser(user))
   G.res(err, ctx, () => {
     ctx.body = {
       data: result

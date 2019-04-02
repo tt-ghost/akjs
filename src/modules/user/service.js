@@ -1,20 +1,23 @@
-const Model = require('./model')
+const BaseService = require('../../base/service')
 
-const model = new Model()
-
-class UserService {
-  static getCurrentUser(ticket) {
-    return model.getCurrentUser(ticket)
+class UserService extends BaseService {
+  constructor() {
+    super('modules/user/model')
+    console.log(this.model, 2)
   }
 
-  static getUserById(userId) {
-    return model.getUserById(userId)
+  getCurrentUser(ticket) {
+    return this.model.getCurrentUser(ticket)
   }
 
-  static addUser(_user) {
-    console.log(888, model.default, _user)
-    const user = Object.assign(model.default, _user)
-    return model.addUser(user)
+  getUserById(userId) {
+    return this.model.getUserById(userId)
+  }
+
+  addUser(_user) {
+    console.log(888, this.model.default, _user)
+    const user = Object.assign(this.model.default, _user)
+    return this.model.addUser(user)
   }
 }
 
