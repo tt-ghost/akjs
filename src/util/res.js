@@ -23,6 +23,12 @@ function res(err, ctx, success) {
   if (err) {
     if (typeof err.code === 'string') {
       resolveSQLError(err, ctx)
+    } else if (err.code === 401) {
+      ctx.status = 401
+      ctx.body = {
+        // TODO:login url
+        url: ''
+      }
     } else {
       ctx.status = err.code || 404
       ctx.body = {
