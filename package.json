@@ -1,8 +1,8 @@
 {
   "name": "koa-startkit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
-    "start": "cross-env NODE_ENV=dev nodemon ./src/app.js",
+    "start": "cross-env NODE_ENV=dev node ./src/app.js",
     "server": "pm2 start ./src/app.js",
     "server-test": "cross-env NODE_ENV=test npm run server",
     "server-stage": "cross-env NODE_ENV=stage npm run server",
@@ -29,7 +29,6 @@
     "cross-env": "^5.2.0",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "nodemon": "^1.18.10"
+    "eslint-plugin-import": "^2.16.0"
   }
 }
