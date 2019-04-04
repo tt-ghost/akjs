@@ -35,3 +35,41 @@ brew install mysql -y
 - 日常运维，[pm2文档](https://github.com/creationix/nvm)
 
 ## 项目结构
+
+```
+.
+├── app.js                // 入口文件
+├── base                  // 基础class
+│   ├── model.js
+│   └── service.js
+├── config                // 系统配置信息
+│   ├── db.js
+│   └── env.js
+├── middlewares           // 中间件
+│   ├── body-parser.js
+│   ├── favicon.js
+│   ├── index.js
+│   ├── proxy-cdn.js
+│   └── session.js
+├── modules               // 业务模块，每个文件夹对应一个模块，含route\service\model
+│   ├── index.js
+│   ├── passport          // 登录业务模块
+│   │   ├── index.js
+│   │   ├── model.js
+│   │   ├── service.js
+│   │   └── sql.js
+│   └── user              // 用户模块
+│       ├── index.js
+│       ├── model.js
+│       ├── service.js
+│       └── sql.js
+├── sql                   // SQL文件，启动创建的表等
+│   ├── db.sql
+│   └── user.sql
+└── util                  // 方法工具集
+    ├── db.js
+    ├── error.js
+    ├── global.js
+    ├── helper.js
+    └── res.js
+```
