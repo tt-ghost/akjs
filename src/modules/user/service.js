@@ -3,7 +3,6 @@ const BaseService = require('../../base/service')
 class UserService extends BaseService {
   constructor() {
     super('modules/user/model')
-    console.log(this.model, 2)
   }
 
   getCurrentUser(ticket) {
