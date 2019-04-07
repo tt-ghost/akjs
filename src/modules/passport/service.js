@@ -14,6 +14,14 @@ class PassportService extends BaseService {
     }
     return new G.PromiseError('用户名或密码错误', 400)
   }
+
+  reg({ username, pwd }) {
+    // TODO: 注册
+    if (username && pwd) {
+      return this.model.reg({ username, pwd })
+    }
+    return new G.PromiseError('用户名或密码错误', 400)
+  }
 }
 
 module.exports = PassportService

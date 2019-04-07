@@ -24,18 +24,21 @@ router.post('/login', async ctx => {
  * logout
  */
 router.get('/logout', async ctx => {
-  ctx.body = {
-    message: '退出成功'
-  }
+  // TODO: remove cookie
+  // ctx.cookie.set()
+  ctx.status = 302
+  ctx.redirect = '/login'
 })
 
 /**
  * 注册
  */
 router.post('/reg', async ctx => {
-  ctx.body = {
-    message: '注册成功'
-  }
+  const [err] = await G.ato(service.reg())
+  G.res(err, ctx, () => {
+    ctx.status = 302
+    ctx.redirect = '/'
+  })
 })
 
 /**
