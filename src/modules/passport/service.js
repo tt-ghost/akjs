@@ -15,6 +15,10 @@ class PassportService extends BaseService {
     return new G.PromiseError('用户名或密码错误', 400)
   }
 
+  /**
+   * 注册用户
+   * @param {String} param0 用户名
+   */
   reg({ username, pwd }) {
     // TODO: 注册
     if (username && pwd) {
