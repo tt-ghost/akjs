@@ -1,6 +1,7 @@
 const ato = require('await-to-js').default
 const res = require('./res')
 const ErrorUtil = require('./error')
+const h = require('./helper')
 
 const { PromiseError } = ErrorUtil
 
@@ -9,6 +10,7 @@ module.exports = g => {
   g.G = {
     ato,
     res,
+    h,
     PromiseError
   }
 }
