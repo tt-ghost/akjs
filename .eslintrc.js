@@ -14,10 +14,13 @@ module.exports = {
       "functions": "ignore"
     }],
     "global-require": 0,
-    "import/no-dynamic-require": 0
+    "import/no-dynamic-require": 0,
+    "class-methods-use-this": 0,
+    "no-plusplus": 0,
+    "no-else-return": 0
   },
-  "globals": {
+  globals: {
     // 设置全局变量，false为不可重新赋值
-    "G": false
+    G: false
   }
 }
