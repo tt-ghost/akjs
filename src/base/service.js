@@ -4,11 +4,11 @@ module.exports = class BaseService {
   constructor(model) {
     if (model) {
       const Model = require(path.resolve(__dirname, '..', model))
-      this.model = new Model()
+      this.$model = new Model()
     }
   }
 
-  checkRules(rules, callback) {
+  $validate(rules, callback) {
     let result
     for (let i = 0; i < rules.length; i++) {
       if (rules[i].rule) {

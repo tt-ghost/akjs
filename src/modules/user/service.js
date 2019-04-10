@@ -10,7 +10,7 @@ class UserService extends BaseService {
    * @param {String} ticket 登录的cookie字段
    */
   getCurrentUser(ticket) {
-    return this.model.getCurrentUser(ticket)
+    return this.$model.getCurrentUser(ticket)
   }
 
   /**
@@ -18,7 +18,7 @@ class UserService extends BaseService {
    * @param {Number} userId 用户ID
    */
   getUserById(userId) {
-    return this.model.getUserById(userId)
+    return this.$model.getUserById(userId)
   }
 
   /**
@@ -26,9 +26,9 @@ class UserService extends BaseService {
    * @param {Object} _user 用户对象
    */
   addUser(_user) {
-    console.log(888, this.model.default, _user)
-    const user = Object.assign(this.model.default, _user)
-    return this.model.addUser(user)
+    console.log(888, this.$model.default, _user)
+    const user = Object.assign(this.$model.default, _user)
+    return this.$model.addUser(user)
   }
 }
 

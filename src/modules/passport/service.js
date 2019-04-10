@@ -10,7 +10,7 @@ class PassportService extends BaseService {
   login({ username, pwd }) {
     // check username and pwd
     if (username && pwd) {
-      return this.model.login({ username, pwd })
+      return this.$model.login({ username, pwd })
     }
     return new G.PromiseError('用户名或密码错误', 400)
   }
@@ -22,7 +22,7 @@ class PassportService extends BaseService {
   reg({ username, pwd }) {
     // TODO: 注册
     if (username && pwd) {
-      return this.model.reg({ username, pwd })
+      return this.$model.reg({ username, pwd })
     }
     return new G.PromiseError('用户名或密码错误', 400)
   }
