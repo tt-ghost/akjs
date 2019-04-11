@@ -48,11 +48,4 @@ router.post('/forget', ctx => {
   ctx.body = { message: '忘记密码' }
 })
 
-/**
- * forget pwd
- */
-router.post('/forget', ctx => {
-  ctx.body = { message: '忘记密码' }
-})
-
 module.exports = router

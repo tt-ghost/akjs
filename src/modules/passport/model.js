@@ -9,6 +9,11 @@ class PassportModel extends BaseModel {
     const { username, pwd } = user
     return this.query(SQL.PASSPORT_LOGIN, [username, pwd])
   }
+
+  reg(user) {
+    const { username, pwd } = user
+    return this.query(SQL.PASSPORT_REG, [username, pwd])
+  }
 }
 
 module.exports = PassportModel

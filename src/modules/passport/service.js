@@ -9,8 +9,8 @@ class PassportService extends BaseService {
 
   login({ username, pwd }) {
     const rules = [
-      { rule: !username, message: 'username未传', code: 400 },
-      { rule: !pwd, message: 'pwd未传', code: 400 }
+      { rule: !username, message: 'username未传' },
+      { rule: !pwd, message: 'pwd未传' }
     ]
     return this.$validate(rules, () => this.$model.login({ username, pwd }))
   }
@@ -21,8 +21,8 @@ class PassportService extends BaseService {
    */
   reg({ username, pwd }) {
     const rules = [
-      { rule: !username, message: 'username未传', code: 400 },
-      { rule: !pwd, message: 'pwd未传', code: 400 }
+      { rule: !username, message: 'username未传' },
+      { rule: !pwd, message: 'pwd未传' }
     ]
     return this.$validate(rules, () => this.$model.reg({ username, pwd }))
   }
