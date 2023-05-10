@@ -2,7 +2,8 @@
   "name": "koa-startkit",
   "version": "0.1.1",
   "scripts": {
-    "start": "cross-env NODE_ENV=dev node ./src/app.js",
+    "start": "npm run dev",
+    "dev": "cross-env NODE_ENV=dev node ./src/app.js",
     "server": "pm2 start ./src/app.js",
     "server-test": "cross-env NODE_ENV=test npm run server",
     "server-stage": "cross-env NODE_ENV=stage npm run server",
@@ -14,21 +15,22 @@
     "url": "git@github.com:tt-ghost/koa-startkit.git"
   },
   "dependencies": {
-    "await-to-js": "^2.1.1",
-    "koa": "^2.7.0",
-    "koa-bodyparser": "^4.2.1",
-    "koa-convert": "^1.2.0",
+    "await-to-js": "^3.0.0",
+    "koa": "^2.14.2",
+    "koa-bodyparser": "^4.4.0",
+    "koa-convert": "^2.0.0",
     "koa-mysql-session": "0.0.2",
     "koa-proxy": "^0.9.0",
-    "koa-router": "^7.4.0",
-    "koa-session": "^5.10.1",
-    "mysql": "^2.16.0"
+    "koa-router": "^12.0.0",
+    "koa-session": "^6.4.0",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "cross-env": "^5.2.0",
-    "eslint": "^5.15.3",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "@chengjs/eslint-plugin": "^0.4.1",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
   }
 }

@@ -1,18 +1,18 @@
-const BaseService = require('../../base/service')
+const BaseService = require("../../base/service");
 /**
  * passport service
  */
 class PassportService extends BaseService {
   constructor() {
-    super('modules/passport/model')
+    super("modules/passport/model");
   }
 
   login({ username, pwd }) {
     const rules = [
-      { rule: !username, message: 'username未传' },
-      { rule: !pwd, message: 'pwd未传' }
-    ]
-    return this.$validate(rules, () => this.$model.login({ username, pwd }))
+      { rule: !username, message: "username未传" },
+      { rule: !pwd, message: "pwd未传" },
+    ];
+    return this.$validate(rules, () => this.$model.login({ username, pwd }));
   }
 
   /**
@@ -21,11 +21,11 @@ class PassportService extends BaseService {
    */
   reg({ username, pwd }) {
     const rules = [
-      { rule: !username, message: 'username未传' },
-      { rule: !pwd, message: 'pwd未传' }
-    ]
-    return this.$validate(rules, () => this.$model.reg({ username, pwd }))
+      { rule: !username, message: "username未传" },
+      { rule: !pwd, message: "pwd未传" },
+    ];
+    return this.$validate(rules, () => this.$model.reg({ username, pwd }));
   }
 }
 
-module.exports = PassportService
+module.exports = PassportService;

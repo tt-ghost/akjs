@@ -1,16 +1,16 @@
 /**
  * DBUtil 数据库操作类
  */
-const mysql = require('mysql')
-const fs = require('fs')
-const path = require('path')
-const db = require('../config/db')
+const mysql = require("mysql");
+const fs = require("fs");
+const path = require("path");
+const db = require("../config/db");
 
-const pool = mysql.createPool(db)
+const pool = mysql.createPool(db);
 
 class DBUtil {
   constructor() {
-    this.pool = pool
+    this.pool = pool;
   }
 
   /**
@@ -22,20 +22,20 @@ class DBUtil {
     return new Promise((resolve, reject) => {
       this.pool.getConnection((err, connection) => {
         if (err) {
-          reject(err)
+          reject(err);
         } else {
           connection.query(sql, values, (queryError, rows) => {
             if (queryError) {
-              reject(queryError)
+              reject(queryError);
             } else {
               // 转换 RowDataPacket 为 json
-              resolve(JSON.parse(JSON.stringify(rows)))
+              resolve(JSON.parse(JSON.stringify(rows)));
             }
-            connection.release()
-          })
+            connection.release();
+          });
         }
-      })
-    })
+      });
+    });
   }
 
   /**
@@ -43,8 +43,8 @@ class DBUtil {
    * @param {string} file sql 文件路径
    */
   execSQLFile(file) {
-    const sql = fs.readFileSync(file, 'utf8')
-    return this.query(sql, null)
+    const sql = fs.readFileSync(file, "utf8");
+    return this.query(sql, null);
   }
 
   /**
@@ -53,12 +53,12 @@ class DBUtil {
    */
   $initDB(files) {
     if (Array.isArray(files)) {
-      files.forEach(file => {
-        const sql = path.resolve(__dirname, '../sql', `${file}.sql`)
-        this.execSQLFile(sql)
-      })
+      files.forEach((file) => {
+        const sql = path.resolve(__dirname, "../sql", `${file}.sql`);
+        this.execSQLFile(sql);
+      });
     }
   }
 }
 
-module.exports = DBUtil
+module.exports = DBUtil;

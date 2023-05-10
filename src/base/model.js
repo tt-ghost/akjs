@@ -1,6 +1,5 @@
-const DBUtil = require('../util/db')
+const DBUtil = require("../utils/db");
 
-class BaseModel extends DBUtil {
-}
+class BaseModel extends DBUtil {}
 
-module.exports = BaseModel
+module.exports = BaseModel;

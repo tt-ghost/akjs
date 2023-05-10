@@ -1,32 +1,32 @@
-const BaseModel = require('../../base/model')
-const SQL = require('./sql')
+const BaseModel = require("../../base/model");
+const SQL = require("./sql");
 
 class UserModel extends BaseModel {
   constructor() {
-    super()
+    super();
     this.default = {
-      status: 'pending',
-      name: '',
-      nickname: '',
-      email: '',
-      password: '',
-      avator: '',
-      sex: ''
-    }
+      status: "pending",
+      name: "",
+      nickname: "",
+      email: "",
+      password: "",
+      avator: "",
+      sex: "",
+    };
   }
 
   /**
    * 获取当前用户信息
    */
   getCurrentUser() {
-    return this.query(SQL.USER_GET_CURRENT_USER, [])
+    return this.query(SQL.USER_GET_CURRENT_USER, []);
   }
 
   /**
    * 通过用户名获取用户
    */
   getUserById(userId) {
-    return this.query(SQL.USER_GET_USER_BY_ID, [userId])
+    return this.query(SQL.USER_GET_USER_BY_ID, [userId]);
   }
 
   /**
@@ -34,8 +34,8 @@ class UserModel extends BaseModel {
    * @param {Object} user 用户信息
    */
   addUser(user) {
-    return this.query(SQL.USER_ADD_USER, user)
+    return this.query(SQL.USER_ADD_USER, user);
   }
 }
 
-module.exports = UserModel
+module.exports = UserModel;
