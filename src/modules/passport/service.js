@@ -1,10 +1,10 @@
-const BaseService = require("../../base/service");
+import BaseService from "../../base/service.js";
 /**
  * passport service
  */
-class PassportService extends BaseService {
+export default class PassportService extends BaseService {
   constructor() {
-    super("modules/passport/model");
+    super("modules/passport/model.js");
   }
 
   login({ username, pwd }) {
@@ -27,5 +27,3 @@ class PassportService extends BaseService {
     return this.$validate(rules, () => this.$model.reg({ username, pwd }));
   }
 }
-
-module.exports = PassportService;

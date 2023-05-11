@@ -1,4 +1,4 @@
-module.exports = function error() {
+export default function error() {
   return async (ctx, next) => {
     try {
       console.log(323);
@@ -7,8 +7,8 @@ module.exports = function error() {
       await new G.PromiseError(e);
     }
   };
-};
+}
 
-// module.exports = (app) => {
+// export default (app) => {
 //   app.use(error());
 // };

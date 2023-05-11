@@ -1,8 +1,8 @@
-const BaseService = require("../../base/service");
+import BaseService from "../../base/service.js";
 
-class UserService extends BaseService {
+export default class UserService extends BaseService {
   constructor() {
-    super("modules/user/model");
+    super("modules/user/model.js");
   }
 
   /**
@@ -36,5 +36,3 @@ class UserService extends BaseService {
     return this.$validate(rules, () => this.$model.addUser(user));
   }
 }
-
-module.exports = UserService;

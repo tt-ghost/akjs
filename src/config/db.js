@@ -20,4 +20,4 @@ const DB_CONFIG = {
   },
 };
 
-module.exports = DB_CONFIG[process.env.NODE_ENV];
+export default DB_CONFIG[process.env.NODE_ENV];

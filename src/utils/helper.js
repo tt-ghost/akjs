@@ -13,7 +13,7 @@ const Obj = {
   },
 };
 
-module.exports = {
+export default {
   isFun,
   isStr,
   isPosInt,

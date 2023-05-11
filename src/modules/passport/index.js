@@ -1,13 +1,14 @@
 /**
  * passport router
  */
+import Router from "koa-router";
 // const Router = require("koa-router");
-const Service = require("./service");
+import Service from "./service.js";
 
 const service = new Service();
-// const router = new Router();
-module.exports = (app) => {
-  const { router } = app;
+export default (app) => {
+  const router = new Router();
+  // const { router } = app;
   router.get("/test", async (ctx) => {
     ctx.body = {
       message: "test",
@@ -53,5 +54,7 @@ module.exports = (app) => {
   router.post("/forget", (ctx) => {
     ctx.body = { message: "忘记密码" };
   });
+
+  return router;
 };
-// module.exports = router;
+// export default router;

@@ -1,10 +1,16 @@
-const path = require("path");
+import path from "path";
+import { fileURLToPath } from "url";
 
-module.exports = class BaseService {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default class BaseService {
   constructor(model) {
     if (model) {
-      const Model = require(path.resolve(__dirname, "..", model));
-      this.$model = new Model();
+      import(path.resolve(__dirname, "..", model)).then((module) => {
+        const Model = module.default;
+        this.$model = new Model();
+      });
     }
   }
 
@@ -24,4 +30,4 @@ module.exports = class BaseService {
       return Promise.resolve();
     }
   }
-};
+}

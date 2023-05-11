@@ -1,8 +1,9 @@
-const Router = require("koa-router");
+import Router from "koa-router";
+import getRouter from "../modules/index.js";
 
-const ROUTER_BASE = "../modules";
+const ROUTER_BASE = "../modules/index.js";
 
-module.exports = (app) => {
+export default async (app) => {
   const { config } = app;
   const { prefix = "/" } = config.router || {};
   const hasRouter = app.router instanceof Router;
@@ -12,11 +13,8 @@ module.exports = (app) => {
         prefix,
       });
 
-  const routerModule = require(ROUTER_BASE);
-  if (typeof routerModule === "function") {
-    routerModule(app);
+  getRouter(app);
 
-    app.use(app.router.routes());
-    app.use(app.router.allowedMethods());
-  }
+  app.use(app.router.routes());
+  app.use(app.router.allowedMethods());
 };

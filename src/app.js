@@ -3,8 +3,8 @@
 // const router = require("./modules");
 // const middlewares = require("./middlewares");
 // const DBUtil = require("./utils/db");
-const globalUtil = require("./utils/global");
-const ChengApp = require("./ChengApp/app");
+import globalUtil from "./utils/global.js";
+import ChengApp from "./ChengApp/app.js";
 
 class App extends ChengApp {
   constructor() {

@@ -1,10 +1,10 @@
 /**
  * passport model
  */
-const BaseModel = require("../../base/model");
-const SQL = require("./sql");
+import BaseModel from "../../base/model.js";
+import SQL from "./sql.js";
 
-class PassportModel extends BaseModel {
+export default class PassportModel extends BaseModel {
   login(user) {
     const { username, pwd } = user;
     return this.query(SQL.PASSPORT_LOGIN, [username, pwd]);
@@ -15,5 +15,3 @@ class PassportModel extends BaseModel {
     return this.query(SQL.PASSPORT_REG, [username, pwd]);
   }
 }
-
-module.exports = PassportModel;

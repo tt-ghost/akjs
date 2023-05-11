@@ -1,4 +1,4 @@
-const Helper = require("../../utils/helper");
+import Helper from "../../utils/helper.js";
 
 const SQL_MAP = {
   // 获取当前用户
@@ -9,4 +9,4 @@ const SQL_MAP = {
   ADD_USER: "INSERT INTO user SET ?",
 };
 
-module.exports = Helper.Obj.addKeyPrefix(SQL_MAP, "USER_");
+export default Helper.Obj.addKeyPrefix(SQL_MAP, "USER_");

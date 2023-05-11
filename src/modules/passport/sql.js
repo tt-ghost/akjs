@@ -1,4 +1,4 @@
-const Helper = require("../../utils/helper");
+import Helper from "../../utils/helper.js";
 
 const SQL_MAP = {
   // 登录
@@ -7,4 +7,4 @@ const SQL_MAP = {
   REG: "INSET INTO passport(name, pwd) VALUES(?, ?)",
 };
 
-module.exports = Helper.Obj.addKeyPrefix(SQL_MAP, "PASSPORT_");
+export default Helper.Obj.addKeyPrefix(SQL_MAP, "PASSPORT_");

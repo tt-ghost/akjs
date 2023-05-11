@@ -1,5 +1,5 @@
-const DBUtil = require("../utils/db");
+import DBUtil from "../utils/db.js";
 
 class BaseModel extends DBUtil {}
 
-module.exports = BaseModel;
+export default BaseModel;

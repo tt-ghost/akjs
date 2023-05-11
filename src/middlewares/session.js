@@ -1,6 +1,6 @@
-const session = require("koa-session");
-const SQLStore = require("koa-mysql-session");
-const db = require("../config/db");
+import session from "koa-session";
+import SQLStore from "koa-mysql-session";
+import db from "../config/db.js";
 
 // init db
 const sessionConf = {
@@ -21,7 +21,7 @@ const cookieConf = {
 };
 
 // 配置 session 中间件
-module.exports = (app) => {
+export default (app) => {
   app.use(
     session(
       {

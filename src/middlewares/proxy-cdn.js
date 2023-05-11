@@ -1,10 +1,10 @@
-const proxy = require("koa-proxy");
-const convert = require("koa-convert");
+import proxy from "koa-proxy";
+import convert from "koa-convert";
 
 /**
  * 配置 proxy cdn 中间件
  */
-module.exports = (app) => {
+export default (app) => {
   app.use(
     convert(
       proxy({

@@ -1,11 +1,12 @@
-// const Router = require("koa-router");
-const Service = require("./service");
+import Router from "koa-router";
+import Service from "./service.js";
 
 const service = new Service();
 // const router = new Router();
 
-module.exports = (app) => {
-  const { router } = app;
+export default (app) => {
+  // const { router } = app;
+  const router = new Router();
   /**
    * get current user
    */
@@ -53,4 +54,5 @@ module.exports = (app) => {
   router.put("/", (ctx) => {
     ctx.body = { status: 200 };
   });
+  return router;
 };

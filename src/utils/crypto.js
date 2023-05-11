@@ -1,4 +1,4 @@
-const crypto = require("crypto");
+import crypto from "crypto";
 
 /**
  * 字符串加密
@@ -24,7 +24,7 @@ function decrypt(str, secret) {
   return dec;
 }
 
-module.exports = {
+export default {
   encrypt,
   decrypt,
 };

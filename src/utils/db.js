@@ -1,14 +1,17 @@
 /**
  * DBUtil 数据库操作类
  */
-const mysql = require("mysql");
-const fs = require("fs");
-const path = require("path");
-const db = require("../config/db");
+import mysql from "mysql";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import db from "../config/db.js";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const pool = mysql.createPool(db);
 
-class DBUtil {
+export default class DBUtil {
   constructor() {
     this.pool = pool;
   }
@@ -61,4 +64,4 @@ class DBUtil {
   }
 }
 
-module.exports = DBUtil;
+// export default DBUtil;

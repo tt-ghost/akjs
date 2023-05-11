@@ -1,14 +1,15 @@
-const Koa = require("koa");
-const config = require("./config");
-const middleware = require("./middleware");
-const DBUtil = require("../utils/db");
+import Koa from "koa";
+import config from "./config.js";
+import middleware from "./middleware.js";
+import router from "./router.js";
+import DBUtil from "../utils/db.js";
 
 const initSql = () => {
   const sqlFiles = ["user"];
   new DBUtil().$initDB(sqlFiles);
 };
 
-module.exports = class App {
+export default class App {
   constructor() {
     const app = new Koa();
     this.app = app;
@@ -29,6 +30,9 @@ module.exports = class App {
     // 初始化中间件
     middleware(app);
 
+    // 初始化router
+    router(app);
+
     const { PORT = 8120 } = app.config.env || {};
 
     app.listen(PORT);
@@ -38,4 +42,4 @@ module.exports = class App {
       this.onReady(app);
     }
   }
-};
+}

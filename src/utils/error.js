@@ -11,6 +11,6 @@ class PromiseError {
   }
 }
 
-module.exports = {
+export default {
   PromiseError,
 };

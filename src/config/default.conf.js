@@ -1,4 +1,4 @@
-module.exports = (app) => {
+export default (app) => {
   const { config } = app;
   // const { NODE_ENV } = process.env;
 

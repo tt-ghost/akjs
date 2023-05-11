@@ -1,4 +1,4 @@
-const Helper = require("./helper");
+import Helper from "./helper.js";
 
 /**
  * 解析SQL异常
@@ -19,7 +19,7 @@ function resolveSQLError(err, ctx) {
   }
 }
 
-function res(err, ctx, success) {
+export default function res(err, ctx, success) {
   if (err) {
     if (typeof err.code === "string") {
       resolveSQLError(err, ctx);
@@ -42,4 +42,4 @@ function res(err, ctx, success) {
   }
 }
 
-module.exports = res;
+// export default res;

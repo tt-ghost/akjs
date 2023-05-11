@@ -1,7 +1,7 @@
-const BaseModel = require("../../base/model");
-const SQL = require("./sql");
+import BaseModel from "../../base/model.js";
+import SQL from "./sql.js";
 
-class UserModel extends BaseModel {
+export default class UserModel extends BaseModel {
   constructor() {
     super();
     this.default = {
@@ -37,5 +37,3 @@ class UserModel extends BaseModel {
     return this.query(SQL.USER_ADD_USER, user);
   }
 }
-
-module.exports = UserModel;

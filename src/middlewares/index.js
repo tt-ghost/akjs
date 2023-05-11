@@ -1,10 +1,10 @@
-const error = require("./error");
-const session = require("./session");
-const bodyParser = require("./body-parser");
-const proxyCDN = require("./proxy-cdn");
-const favicon = require("./favicon");
+import error from "./error.js";
+import session from "./session.js";
+import bodyParser from "./body-parser.js";
+import proxyCDN from "./proxy-cdn.js";
+import favicon from "./favicon.js";
 
-module.exports = (app) => {
+export default (app) => {
   error(app);
   bodyParser(app);
   session(app);

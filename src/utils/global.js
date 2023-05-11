@@ -1,12 +1,12 @@
-const ato = require("await-to-js").default;
-const res = require("./res");
-const ErrorUtil = require("./error");
-const h = require("./helper");
+import ato from "await-to-js";
+import res from "./res.js";
+import ErrorUtil from "./error.js";
+import h from "./helper.js";
 
 const { PromiseError } = ErrorUtil;
 
 /* eslint no-param-reassign: ["error", { "props": false }] */
-module.exports = (g) => {
+export default (g) => {
   g.G = {
     ato,
     res,
