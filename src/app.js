@@ -4,7 +4,7 @@
 // const middlewares = require("./middlewares");
 // const DBUtil = require("./utils/db");
 import globalUtil from "./utils/global.js";
-import ChengApp from "./ChengApp/app.js";
+import ChengApp from "./ChengApp/Application.js";
 
 class App extends ChengApp {
   constructor() {

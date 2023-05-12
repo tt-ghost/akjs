@@ -8,10 +8,12 @@ const initSql = () => {
   const sqlFiles = ["user"];
   new DBUtil().$initDB(sqlFiles);
 };
+const app = new Koa();
+export const createApp = () => app;
 
-export default class App {
+export default class Application {
   constructor() {
-    const app = new Koa();
+    const app = createApp();
     this.app = app;
     app.config = app.config || {};
 
