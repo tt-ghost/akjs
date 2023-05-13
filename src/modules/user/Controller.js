@@ -1,21 +1,27 @@
-import Service from "./Service.js";
+import BaseController from "../../base/BaseController.js";
 
-const service = new Service();
-// const router = new Router();
-
-export default class Controller {
+export default class UserController extends BaseController {
   /**
    * get current user
    */
   async getCurrent(ctx) {
-    // const token = ctx.cookies.get('token')
-    console.log("/current");
-    const [err, result] = await G.ato(service.getCurrentUser());
-    G.res(err, ctx, () => {
-      ctx.body = {
-        data: result,
-      };
-    });
+    console.log("cookies: token ", ctx.cookies.get("token"));
+    const error = this.app.validate({ name: "string" }, { name: 2 });
+    const current = await this.app.service.user.getCurrentUser(1);
+
+    console.log("current: ", current);
+    if (error) {
+      this.error(ctx, 400, "校验错误", error);
+    } else {
+      this.success(ctx);
+    }
+
+    // const [err, result] = await G.ato(service.user.getCurrentUser());
+    // G.res(err, ctx, () => {
+    //   ctx.body = {
+    //     data: result,
+    //   };
+    // });
   }
 
   /**
@@ -23,7 +29,9 @@ export default class Controller {
    */
   async getById(ctx) {
     const { userId } = ctx.params;
-    const [err, result] = await G.ato(service.getUserById(userId));
+    const [err, result] = await G.ato(
+      this.app.service.user.getUserById(userId)
+    );
     G.res(err, ctx, () => {
       ctx.body = {
         data: result,
@@ -37,7 +45,7 @@ export default class Controller {
   async create(ctx) {
     // ctx.request
     const user = ctx.request.body;
-    const [err, result] = await G.ato(service.addUser(user));
+    const [err, result] = await G.ato(this.app.service.user.addUser(user));
     G.res(err, ctx, () => {
       ctx.body = {
         data: result,

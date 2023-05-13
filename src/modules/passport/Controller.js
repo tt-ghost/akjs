@@ -1,6 +1,14 @@
-import Controller from "../../ChengApp/controller";
+import Controller from "../../ChengApp/Controller.js";
 export default class PassportController extends Controller {
-  async login() {
-    this.ctx;
+  async login(ctx) {
+    ctx.body = {
+      login: true,
+    };
+  }
+
+  async reg(ctx) {
+    ctx.body = {
+      reg: true,
+    };
   }
 }

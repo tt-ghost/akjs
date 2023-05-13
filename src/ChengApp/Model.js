@@ -1,6 +1,6 @@
 import Base from "./Base.js";
 
-export default class Service extends Base {
+export default class Model extends Base {
   constructor() {
     super();
   }

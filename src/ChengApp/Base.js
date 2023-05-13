@@ -1,5 +1,11 @@
-import { app as appIns } from "./Application.js";
+import loadApp from "./loadApp.js";
+import Koa from "koa";
 
 export default class Base {
-  app = appIns;
+  get app() {
+    return loadApp();
+  }
+  // constructor() {
+  //   console.log(334, this.app instanceof Koa);
+  // }
 }

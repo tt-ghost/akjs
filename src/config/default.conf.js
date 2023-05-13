@@ -1,8 +1,12 @@
+import path from "path";
+
 export default (app) => {
   const { config } = app;
   // const { NODE_ENV } = process.env;
-
-  config.db = {};
+  config.project = {
+    // path: path.resovle(__dirname, "../../"),
+  };
+  // config.db = {};
   config.router = {
     prefix: "/api",
   };

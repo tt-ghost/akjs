@@ -1,60 +1,23 @@
-/**
- * passport router
- */
 import Router from "koa-router";
-// const Router = require("koa-router");
-import Service from "./service.js";
+import Module from "../../ChengApp/Module.js";
+import Controller from "./Controller.js";
+import Service from "./Service.js";
+import Model from "./Model.js";
 
-const service = new Service();
-export default (app) => {
-  const router = new Router();
-  // const { router } = app;
-  router.get("/test", async (ctx) => {
-    ctx.body = {
-      message: "test",
-    };
-  });
-  /**
-   * login
-   */
-  router.post("/login", async (ctx) => {
-    const { username, pwd } = ctx.request;
-    const [err] = await G.ato(service.login({ username, pwd }));
-    G.res(err, ctx, () => {
-      ctx.body = {
-        message: "登录成功",
-      };
-    });
-  });
+export default class User extends Module {
+  constructor() {
+    super("passport");
+    this.router = new Router();
+    this.controller = new Controller();
+    this.service = new Service();
+    this.model = new Model();
 
-  /**
-   * logout
-   */
-  router.get("/logout", async (ctx) => {
-    // TODO: remove cookie
-    // ctx.cookie.set()
-    ctx.status = 302;
-    ctx.redirect = "/login";
-  });
+    this.loadToApp();
+  }
+  routes() {
+    this.router.post("/reg", (ctx) => this.controller.reg(ctx));
+    this.router.put("/login", (ctx) => this.controller.login(ctx));
 
-  /**
-   * 注册
-   */
-  router.post("/reg", async (ctx) => {
-    const [err] = await G.ato(service.reg());
-    G.res(err, ctx, () => {
-      ctx.status = 302;
-      ctx.redirect = "/";
-    });
-  });
-
-  /**
-   * forget pwd
-   */
-  router.post("/forget", (ctx) => {
-    ctx.body = { message: "忘记密码" };
-  });
-
-  return router;
-};
-// export default router;
+    return this.router.routes();
+  }
+}

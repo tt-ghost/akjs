@@ -3,19 +3,22 @@ export default (app) => {
   const { NODE_ENV } = process.env;
 
   config.middleware = [
-    "error",
-    "body-parser",
-    "session",
-    "proxy-cdn",
-    "favicon",
+    // "error",
+    // "body-parser",
+    // "session",
+    // "proxy-cdn",
+    // "favicon",
   ];
   config.db = {
     database: "koa_startkit",
     user: "root",
     password: "123456",
-    port: "3306",
-    host: "localhost",
-    connectTimeout: 30 * 1000,
+    option: {
+      port: "3306",
+      host: "localhost",
+      connectTimeout: 30 * 1000,
+      dialect: "mysql",
+    },
   };
   config.env = {
     // 后台启动端口
