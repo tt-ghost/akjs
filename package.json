@@ -1,6 +1,6 @@
 {
-  "name": "koa-startkit",
-  "version": "1.0.0",
+  "name": "@chengjs/koa",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "start": "npm run dev",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:tt-ghost/koa-startkit.git"
+    "url": "git@github.com:tt-ghost/chengjs-koa.git"
   },
   "dependencies": {
     "await-to-js": "^3.0.0",

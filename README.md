@@ -1,4 +1,4 @@
-# koa-startkit
+# @chengjs/koa
 
 > koa 脚手架工具，快速生成 node + koa + mysql 等功能的后台服务
 
