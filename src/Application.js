@@ -2,14 +2,14 @@ import loadPlugin from "./loadPlugin.js";
 // import loadConfig from "./loadConfig.js";
 import loadMiddleware from "./loadMiddleware.js";
 import loadRouter from "./loadRouter.js";
-import DBUtil from "../utils/db.js";
+// import DBUtil from "../utils/db.js";
 import loadApp from "./loadApp.js";
 // import Module from "./Module.js";
 
-const initSql = () => {
-  const sqlFiles = [];
-  new DBUtil().$initDB(sqlFiles);
-};
+// const initSql = () => {
+//   const sqlFiles = [];
+//   new DBUtil().$initDB(sqlFiles);
+// };
 
 export default class Application {
   async load() {
@@ -27,7 +27,7 @@ export default class Application {
     }
 
     // 初始化数据库
-    initSql();
+    // initSql();
 
     // 初始化中间件
     await loadMiddleware(app);

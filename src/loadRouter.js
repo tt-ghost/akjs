@@ -11,7 +11,7 @@ export default async (app) => {
     });
   }
 
-  const routerModule = path.resolve(getProjectPath(), `src/modules/index.js`);
+  const routerModule = path.resolve(getProjectPath(), `src/module/index.js`);
   const modu = await import(routerModule);
   if (modu && typeof modu.default === "function") {
     await modu.default(app);

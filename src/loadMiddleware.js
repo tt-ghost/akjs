@@ -7,7 +7,7 @@ export default async (app) => {
   middleware.forEach(async (mid) => {
     const middlewarePath = path.resolve(
       getProjectPath(),
-      `src/middlewares/${mid}.js`
+      `src/middleware/${mid}.js`
     );
     const middlewareModule = await import(middlewarePath);
 

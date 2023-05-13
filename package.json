@@ -2,6 +2,7 @@
   "name": "pigjs",
   "version": "0.1.0",
   "type": "module",
+  "main": "./src/index.js",
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=dev node ./src/app.js",
@@ -10,6 +11,9 @@
     "server-stage": "cross-env NODE_ENV=stage npm run server",
     "server-prod": "cross-env NODE_ENV=prod npm run server"
   },
+  "files": [
+    "src"
+  ],
   "description": "koa framework",
   "license": "MIT",
   "repository": {
@@ -17,14 +21,9 @@
     "url": "git@github.com:tt-ghost/pigjs.git"
   },
   "dependencies": {
-    "await-to-js": "^3.0.0",
     "koa": "^2.14.2",
     "koa-bodyparser": "^4.4.0",
-    "koa-convert": "^2.0.0",
-    "koa-mysql-session": "0.0.2",
-    "koa-proxy": "^0.9.0",
     "koa-router": "^12.0.0",
-    "koa-session": "^6.4.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.3.1",
     "parameter": "^3.7.0",
