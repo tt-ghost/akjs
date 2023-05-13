@@ -1,5 +1,5 @@
 {
-  "name": "pigjs",
+  "name": "akjs",
   "version": "0.1.0",
   "type": "module",
   "main": "./src/index.js",
@@ -18,7 +18,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:tt-ghost/pigjs.git"
+    "url": "git@github.com:tt-ghost/akjs.git"
   },
   "dependencies": {
     "koa": "^2.14.2",

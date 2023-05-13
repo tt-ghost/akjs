@@ -1,4 +1,4 @@
-# pigjs
+# akjs
 
 > 基于 Koa 的 Nodejs 轻量框架，快速生成 node + koa + mysql 等功能的后台服务
 
@@ -13,7 +13,7 @@ node + koa2 + mysql + pm2
 1. 依赖安装 `npm i`
 2. 启动数据库 `mysql.server start`
 3. 登录数据库 `mysql -uroot -p` 输入密码进入
-4. 创建数据库 `CREATE DATABASE pigjs;`
+4. 创建数据库 `CREATE DATABASE akjs;`
 5. 启动方式
    - 本地启动 `npm start`
    - 测试环境启动 `npm run server-test`
