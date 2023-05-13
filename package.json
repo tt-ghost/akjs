@@ -1,5 +1,5 @@
 {
-  "name": "@chengjs/koa",
+  "name": "pigjs",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
@@ -10,10 +10,11 @@
     "server-stage": "cross-env NODE_ENV=stage npm run server",
     "server-prod": "cross-env NODE_ENV=prod npm run server"
   },
+  "description": "koa framework",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:tt-ghost/chengjs-koa.git"
+    "url": "git@github.com:tt-ghost/pigjs.git"
   },
   "dependencies": {
     "await-to-js": "^3.0.0",
