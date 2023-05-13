@@ -8,7 +8,7 @@ import loadConfig from "./loadConfig.js";
 import loadMiddleware from "./loadMiddleware.js";
 import loadPlugin from "./loadPlugin.js";
 import loadRouter from "./loadRouter.js";
-import utils from "./utils.js";
+import * as utils from "./utils.js";
 
 export {
   Controller,
