@@ -1,11 +1,11 @@
 import path from "path";
-import { getProjectPath } from "./utils.js";
+import { getProjectPath, isFunction } from "./utils.js";
 import loadConfig from "./loadConfig.js";
 
 export default async (app) => {
   if (!app.config) app.config = {};
 
-  // const env = process.env.CJ_ENV || "dev";
+  console.log('getProjectPath()', getProjectPath())
   const pluginPath = path.resolve(getProjectPath(), `src/config/plugin.js`);
   await loadConfig(app);
 
@@ -17,7 +17,7 @@ export default async (app) => {
   Object.keys(plugin).map((key) => {
     if (!plugin[key].enable) delete app.config[key];
 
-    if (typeof plugin[key].load === "function") {
+    if (isFunction(plugin[key].load)) {
       plugin[key].load(app);
     }
   });

@@ -1,5 +1,4 @@
 import loadApp from "./loadApp.js";
-import Koa from "koa";
 
 export default class Base {
   get app() {

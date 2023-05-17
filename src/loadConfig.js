@@ -1,5 +1,5 @@
 import path from "path";
-import { getProjectPath } from "./utils.js";
+import { getProjectPath, isFunction } from "./utils.js";
 
 export default async (app) => {
   if (!app.config) app.config = {};
@@ -17,10 +17,10 @@ export default async (app) => {
   const envConf = await import(envConfPath);
   const defaultConf = await import(defaultConfPath);
 
-  if (defaultConf && typeof defaultConf.default === "function") {
+  if (defaultConf && isFunction(defaultConf.default)) {
     defaultConf.default(app);
   }
-  if (envConf && typeof envConf.default === "function") {
+  if (envConf && isFunction(envConf.default)) {
     envConf.default(app);
   }
 };

@@ -1,15 +1,10 @@
 {
   "name": "akjs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "main": "./src/index.js",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "cross-env NODE_ENV=dev node ./src/app.js",
-    "server": "pm2 start ./src/app.js",
-    "server-test": "cross-env NODE_ENV=test npm run server",
-    "server-stage": "cross-env NODE_ENV=stage npm run server",
-    "server-prod": "cross-env NODE_ENV=prod npm run server"
+    "start": "npm run dev"
   },
   "files": [
     "src"
@@ -22,12 +17,7 @@
   },
   "dependencies": {
     "koa": "^2.14.2",
-    "koa-bodyparser": "^4.4.0",
-    "koa-router": "^12.0.0",
-    "mysql": "^2.18.1",
-    "mysql2": "^3.3.1",
-    "parameter": "^3.7.0",
-    "sequelize": "^6.31.1"
+    "koa-router": "^12.0.0"
   },
   "devDependencies": {
     "@chengjs/eslint-plugin": "^0.4.1",

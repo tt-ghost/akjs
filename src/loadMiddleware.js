@@ -1,5 +1,5 @@
 import path from "path";
-import { getProjectPath } from "./utils.js";
+import { getProjectPath, isFunction } from "./utils.js";
 
 export default async (app) => {
   const { config } = app;
@@ -11,7 +11,7 @@ export default async (app) => {
     );
     const middlewareModule = await import(middlewarePath);
 
-    if (middlewareModule && typeof middlewarePath.default === "function") {
+    if (middlewareModule && isFunction(middlewarePath.default)) {
       app.use(middlewareModule.default(app));
     }
   });

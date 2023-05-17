@@ -6,14 +6,11 @@ export const dirname = () => {
   return path.dirname(__filename);
 };
 
-export const load = (file) => {
-  // const __filename = fileURLToPath(import.meta.url);
-  // const __dirname = path.dirname(__filename);
-  // const midPath = path.resolve(__dirname, file);
+export const getProjectPath = () => process.cwd();
 
-  // const filePath = path.resolve(process.cwd(), file);
-  const filePath = path.resolve(dirname(), file);
+export const load = (file) => {
+  const filePath = path.resolve(getProjectPath(), file);
   return import(filePath);
 };
 
-export const getProjectPath = () => path.resolve(dirname(), "../../");
+export const isFunction = fn => typeof fn === 'function'

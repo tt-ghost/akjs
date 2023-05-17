@@ -1,6 +1,6 @@
 import Router from "koa-router";
 import path from "path";
-import { getProjectPath } from "./utils.js";
+import { getProjectPath, isFunction } from "./utils.js";
 
 export default async (app) => {
   const { config } = app;
@@ -13,7 +13,7 @@ export default async (app) => {
 
   const routerModule = path.resolve(getProjectPath(), `src/module/index.js`);
   const modu = await import(routerModule);
-  if (modu && typeof modu.default === "function") {
+  if (modu && isFunction(modu.default)) {
     await modu.default(app);
   }
 
