@@ -5,6 +5,10 @@ export default (() => {
   return () => {
     if (app) return app;
     app = new Koa();
+    app.controller = {}
+    app.service = {}
+    app.model = {}
+
     return app;
   };
 })();
