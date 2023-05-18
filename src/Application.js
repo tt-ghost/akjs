@@ -13,8 +13,8 @@ export default class Application {
     await loadPlugin(app);
 
     // 配置生成后hook
-    if (isFunction(this.configCreated)) {
-      this.configCreated(app);
+    if (isFunction(this.configReady)) {
+      this.configReady();
     }
 
     // 初始化中间件
@@ -25,6 +25,7 @@ export default class Application {
 
     if (isFunction(this.ready)) this.ready()
   }
+  configReady() {}
   ready() {}
   started() {}
   async start() {
