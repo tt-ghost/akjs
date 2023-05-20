@@ -2,6 +2,7 @@
   "name": "akjs",
   "version": "0.1.2",
   "type": "module",
+  "types": "./types/index.d.ts",
   "main": "./src/index.js",
   "scripts": {
     "start": "npm run dev"
