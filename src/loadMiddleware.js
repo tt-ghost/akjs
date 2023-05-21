@@ -12,7 +12,7 @@ export default async (app) => {
     const middlewareModule = await import(middlewarePath);
 
     if (middlewareModule && isFunction(middlewarePath.default)) {
-      app.use(middlewareModule.default(app));
+      app.use(await middlewareModule.default(app));
     }
   });
 };

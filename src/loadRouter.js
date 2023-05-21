@@ -13,10 +13,11 @@ export default async (app) => {
 
   const routerModule = path.resolve(getProjectPath(), `src/module/index.js`);
   const modu = await import(routerModule);
+
   if (modu && isFunction(modu.default)) {
     await modu.default(app);
   }
 
-  app.use(app.router.routes());
-  app.use(app.router.allowedMethods());
+  app.use(await app.router.routes());
+  app.use(await app.router.allowedMethods());
 };
