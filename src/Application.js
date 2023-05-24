@@ -2,7 +2,7 @@ import loadPlugin from "./loadPlugin.js";
 import loadMiddleware from "./loadMiddleware.js";
 import loadRouter from "./loadRouter.js";
 import loadApp from "./loadApp.js";
-import { isFunction } from './utils.js'
+import { isFunction } from "./utils.js";
 
 export default class Application {
   async load() {
@@ -23,7 +23,7 @@ export default class Application {
     // 初始化router
     await loadRouter(app);
 
-    if (isFunction(this.ready)) this.ready()
+    if (isFunction(this.ready)) this.ready();
   }
   configReady() {}
   ready() {}
@@ -34,7 +34,7 @@ export default class Application {
     const { PORT = 8120 } = app.config.env || {};
 
     app.listen(PORT);
-    console.log('\x1b[36m%s\x1b[0m', `server is runing on ${PORT} port`);
-    if (isFunction(this.started)) this.started()
+    console.log("\x1b[36m%s\x1b[0m", `server is runing on ${PORT} port`);
+    if (isFunction(this.started)) this.started();
   }
 }
