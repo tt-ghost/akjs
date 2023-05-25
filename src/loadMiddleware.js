@@ -1,4 +1,5 @@
 import path from "path";
+import * as mids from "./middleware/index.js";
 import { getProjectPath, isFunction } from "./utils.js";
 
 export default async (app) => {
@@ -6,6 +7,13 @@ export default async (app) => {
   const middleware = config.middleware || [];
   const promises = [];
   const projectPath = getProjectPath();
+
+  // load default middleware
+  Object.keys(mids).forEach((mid) => {
+    mids[mid](app);
+  });
+
+  // load custom middleward
   middleware.forEach((mid) => {
     promises.push(
       (async () => {
@@ -13,7 +21,10 @@ export default async (app) => {
           projectPath,
           `src/middleware/${mid}.js`
         );
-        const middlewareModule = await import(middlewarePath);
+        let middlewareModule = null;
+        try {
+          middlewareModule = await import(middlewarePath);
+        } catch (e) {}
 
         if (middlewareModule && isFunction(middlewareModule.default)) {
           const mid = await middlewareModule.default(app);

@@ -31,10 +31,13 @@ export default class Application {
   async start() {
     await this.load();
     const { app } = this;
-    const { PORT = 8120 } = app.config.env || {};
+    const { PORT = 8120 } = app.config.server || {};
 
     app.listen(PORT);
+
     console.log("\x1b[36m%s\x1b[0m", `server is runing on ${PORT} port`);
+    console.log("\x1b[36m%s\x1b[0m", `http://127.0.0.1:${PORT}`);
+
     if (isFunction(this.started)) this.started();
   }
 }

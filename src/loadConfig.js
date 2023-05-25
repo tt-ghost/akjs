@@ -5,17 +5,22 @@ export default async (app) => {
   if (!app.config) app.config = {};
 
   const env = process.env.CJ_ENV || "dev";
-  const envConfPath = path.resolve(
-    getProjectPath(),
-    `src/config/${env}.conf.js`
-  );
+  const projectPath = getProjectPath();
+  const envConfPath = path.resolve(projectPath, `src/config/${env}.conf.js`);
   const defaultConfPath = path.resolve(
-    getProjectPath(),
+    projectPath,
     "src/config/default.conf.js"
   );
 
-  const envConf = await import(envConfPath);
-  const defaultConf = await import(defaultConfPath);
+  let envConf = null;
+  try {
+    envConf = await import(envConfPath);
+  } catch (e) {}
+
+  let defaultConf = null;
+  try {
+    defaultConf = await import(defaultConfPath);
+  } catch (e) {}
 
   if (defaultConf && isFunction(defaultConf.default)) {
     defaultConf.default(app);

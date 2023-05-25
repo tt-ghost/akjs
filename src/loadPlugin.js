@@ -5,11 +5,14 @@ import loadConfig from "./loadConfig.js";
 export default async (app) => {
   if (!app.config) app.config = {};
 
-  console.log('getProjectPath()', getProjectPath())
   const pluginPath = path.resolve(getProjectPath(), `src/config/plugin.js`);
   await loadConfig(app);
 
-  const pluginConf = await import(pluginPath);
+  let pluginConf = null;
+  try {
+    pluginConf = await import(pluginPath);
+  } catch (e) {}
+
   let plugin = {};
   if (pluginConf && typeof pluginConf.default === "object") {
     plugin = pluginConf.default || {};
