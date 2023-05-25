@@ -16,7 +16,9 @@ npm install akjs -S
 ├── app.js                // 入口文件
 ├── config                // 配置文件，与default.conf.js文件合并
 │   ├── default.conf.js
-│   └── dev.conf.js       // [NODE_ENV].conf.js 环境通过应用启动时传入，使用制定配置，与default.conf.js合并
+│   └── dev.conf.js       // [NODE_ENV].conf.js 环境通过应用启动时传入，
+│                         // 使用制定配置，与default.conf.js合并
+│
 ├── middleware            // 中间件目录
 │   ├── index.js
 │   └── body-parser.js
