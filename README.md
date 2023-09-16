@@ -7,11 +7,11 @@
 推荐使用 [akjs-create](https://github.com/tt-ghost/create-akjs) 进行创建
 
 ```sh
-pnpm create akjs my-akjs
-# 或 yarn create akjs my-akjs
-# 或 npm create akjs my-akjs
+pnpm create akjs
+# 或 yarn create akjs
+# 或 npm create akjs
 
-# 根据步骤选择模板，安装依赖、启动
+# 根据步骤填写项目名、选择模板、安装依赖、启动
 ```
 
 ## 核心功能
