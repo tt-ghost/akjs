@@ -1,16 +1,22 @@
 # akjs
 
-> 轻量级框架 Nodejs 框架
+> 轻量级框架 Nodejs 框架，基于 Koa 实现
 
-## 安装
+## 创建项目
+
+推荐使用 [akjs-create](https://github.com/tt-ghost/create-akjs) 进行创建
 
 ```sh
-npm install akjs -S
+pnpm create akjs my-akjs
+# 或 yarn create akjs my-akjs
+# 或 npm create akjs my-akjs
+
+# 根据步骤选择模板，安装依赖、启动
 ```
 
 ## 核心功能
 
-- 规划化项目目录
+- 规划项目目录
 
 ```sh
 ├── app.js                // 入口文件
@@ -61,6 +67,6 @@ class App extends Application {
 new App().start();
 ```
 
-## 示例项目
+## 更多示例项目
 
 [akjs-examples](https://github.com/tt-ghost/akjs-examples)
