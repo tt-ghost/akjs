@@ -4,8 +4,6 @@
 
 ## 创建项目
 
-推荐使用 [akjs-create](https://github.com/tt-ghost/create-akjs) 进行创建
-
 ```sh
 pnpm create akjs
 # 或 yarn create akjs
